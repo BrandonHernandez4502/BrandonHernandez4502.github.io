@@ -1,9 +1,0 @@
-# Site settings
-title: Brandon Hernandez
-author:
-  name: Brandon Hernandez
-  email: bthernandez0915@gmail.com
-description: "My personal webpage."
-
-# Build settings
-remote_theme: jekyll/minima
