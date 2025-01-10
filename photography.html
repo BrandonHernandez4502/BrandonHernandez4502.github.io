@@ -9,9 +9,8 @@
             margin: 0;
             padding: 0;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #000;
+            background-color: #f9f9f9;
             color: white;
-            overflow: hidden; /* Prevent extra scrolling */
         }
 
         header {
@@ -21,10 +20,21 @@
             width: 100%;
             background-color: #2c3e50;
             color: white;
-            padding: 20px;
+            padding: 20px 0;
             text-align: center;
-            z-index: 10; /* Ensures the header stays above the content */
+            z-index: 10;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        nav {
+            margin-top: 10px;
+        }
+
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
         }
 
         .container {
@@ -33,15 +43,17 @@
             height: 100vh;
             scroll-snap-type: y mandatory; /* Enables snap scrolling */
             overflow-y: scroll;
-            margin-top: 80px; /* Prevents the header from overlapping the photos */
+            margin-top: 120px; /* Accounts for the height of the header and nav */
         }
 
         .photo {
+            position: relative; /* Makes it possible to position the description absolutely within this section */
             display: flex;
             align-items: center;
             justify-content: center;
-            height: calc(100vh - 80px); /* Fullscreen height minus header height */
+            height: calc(100vh - 120px); /* Fullscreen height minus header height */
             scroll-snap-align: start; /* Ensures snapping to each section */
+            background: black; /* Ensures empty areas have a consistent background color */
         }
 
         .photo img {
@@ -61,34 +73,21 @@
             font-size: 1rem;
             color: white;
             text-align: center;
-        }
-
-        nav {
-            position: fixed;
-            top: 10px;
-            right: 10px;
-            z-index: 10;
-        }
-
-        nav a {
-            margin-right: 15px;
-            text-decoration: none;
-            color: white;
-            font-weight: bold;
+            max-width: 80%; /* Limits the width of the description text */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
         }
     </style>
 </head>
 <body>
     <header>
         <h1>Photography</h1>
+        <nav>
+            <a href="/index.html">Home</a>
+            <a href="/experience.html">Experience</a>
+            <a href="/projects.html">Projects</a>
+            <a href="/photography.html">Photography</a>
+        </nav>
     </header>
-
-     <nav>
-        <a href="/index.html">Home</a>
-        <a href="/experience.html">Experience</a>
-        <a href="/projects.html">Projects</a>
-        <a href="/photography.html">Photography</a>
-    </nav>
 
     <div class="container">
         <div class="photo">
@@ -116,7 +115,7 @@
             <p>Student Walking in The Snow</p>
         </div>
 
-        <!-- Add more photos here by duplicating the div with class "photo" -->
+        <!-- Add more photos as needed -->
     </div>
 </body>
 </html>
