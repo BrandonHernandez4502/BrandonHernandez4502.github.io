@@ -1,0 +1,48 @@
+.footer {
+  background: var(--surface);
+  border-top: 1px solid var(--border);
+  padding: 32px 24px;
+}
+
+.footer__inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.footer__copy {
+  font-size: 0.875rem;
+  color: var(--muted);
+}
+
+.footer__links {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.footer__social {
+  color: var(--muted);
+  display: flex;
+  align-items: center;
+  transition: color var(--transition);
+}
+
+.footer__social:hover {
+  color: var(--accent-light);
+}
+
+.footer__email {
+  font-size: 0.875rem;
+  color: var(--muted);
+  font-family: var(--mono);
+  transition: color var(--transition);
+}
+
+.footer__email:hover {
+  color: var(--accent-light);
+}

@@ -1,0 +1,35 @@
+.interests {
+  background: var(--surface);
+}
+
+.interests__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 16px;
+  list-style: none;
+}
+
+.interest-item {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 18px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  transition: border-color var(--transition), transform 0.22s ease;
+  cursor: default;
+}
+
+.interest-item:hover {
+  border-color: var(--accent);
+  transform: translateY(-3px);
+}
+
+.interest-item__label {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  line-height: 1.3;
+}
