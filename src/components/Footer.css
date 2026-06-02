@@ -1,48 +1,84 @@
 .footer {
-  background: var(--surface);
   border-top: 1px solid var(--border);
-  padding: 32px 24px;
 }
 
-.footer__inner {
-  max-width: var(--max-width);
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 20px;
-  flex-wrap: wrap;
+/* Contact CTA block */
+.footer__contact {
+  padding: 96px 24px 72px;
+  text-align: center;
 }
 
-.footer__copy {
-  font-size: 0.875rem;
-  color: var(--muted);
-}
-
-.footer__links {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-}
-
-.footer__social {
-  color: var(--muted);
-  display: flex;
-  align-items: center;
-  transition: color var(--transition);
-}
-
-.footer__social:hover {
-  color: var(--accent-light);
+.footer__heading {
+  font-size: clamp(2rem, 5vw, 4rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: var(--text);
+  margin-bottom: 24px;
+  text-wrap: balance;
 }
 
 .footer__email {
-  font-size: 0.875rem;
-  color: var(--muted);
+  display: inline-block;
   font-family: var(--mono);
-  transition: color var(--transition);
+  font-size: clamp(0.85rem, 2vw, 1rem);
+  color: var(--accent-light);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(240, 160, 106, 0.3);
+  padding-bottom: 2px;
+  margin-bottom: 40px;
+  transition: color var(--transition), border-color var(--transition);
 }
 
 .footer__email:hover {
-  color: var(--accent-light);
+  color: var(--text);
+  border-color: rgba(240, 236, 226, 0.5);
+}
+
+.footer__socials {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.footer__social {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--muted);
+  padding: 8px 18px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  transition: color var(--transition), border-color var(--transition);
+}
+
+.footer__social:hover {
+  color: var(--text);
+  border-color: var(--accent);
+}
+
+/* Bottom bar */
+.footer__bar {
+  background: var(--surface);
+  border-top: 1px solid var(--border);
+  padding: 20px 24px;
+}
+
+.footer__bar-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer__copy {
+  font-size: 0.82rem;
+  color: var(--muted);
+}
+
+.footer__built {
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  color: var(--border);
 }

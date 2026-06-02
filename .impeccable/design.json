@@ -1,0 +1,220 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-06-01T00:00:00Z",
+  "title": "Design System: Brandon Hernandez",
+  "extensions": {
+    "colorMeta": {
+      "accent": {
+        "role": "primary",
+        "displayName": "Marty Supreme Orange",
+        "canonical": "oklch(62% 0.22 46)",
+        "tonalRamp": ["#3d1200", "#6b2200", "#9c3500", "#c84800", "#e8641c", "#f07d30", "#f0a06a", "#f5c89e"]
+      },
+      "accent-dim": {
+        "role": "primary",
+        "displayName": "Char Orange",
+        "canonical": "oklch(53% 0.21 45)",
+        "tonalRamp": ["#2e0c00", "#521800", "#7a2800", "#a03a00", "#c24e0e", "#d86020", "#e88050", "#f2a878"]
+      },
+      "accent-light": {
+        "role": "primary",
+        "displayName": "Faded Amber",
+        "canonical": "oklch(74% 0.12 50)",
+        "tonalRamp": ["#3a1800", "#622c00", "#8a4400", "#b06020", "#d08048", "#f0a06a", "#f5be98", "#fad8c0"]
+      },
+      "bg": {
+        "role": "neutral",
+        "displayName": "Night Field",
+        "canonical": "oklch(7% 0.01 60)",
+        "tonalRamp": ["#070502", "#100e09", "#17140e", "#201c12", "#2a2418", "#352e20", "#45382a", "#5a4c3a"]
+      },
+      "surface": {
+        "role": "neutral",
+        "displayName": "Raised Surface",
+        "canonical": "oklch(10% 0.012 60)",
+        "tonalRamp": ["#0a0805", "#11100a", "#17140e", "#1e1a12", "#27211a", "#322b22", "#41382e", "#544840"]
+      },
+      "card": {
+        "role": "neutral",
+        "displayName": "Elevated Card",
+        "canonical": "oklch(14% 0.014 58)",
+        "tonalRamp": ["#0d0a06", "#14110c", "#201c12", "#2a2419", "#353020", "#45402e", "#575240", "#6e6856"]
+      },
+      "border": {
+        "role": "neutral",
+        "displayName": "Warm Divider",
+        "canonical": "oklch(20% 0.018 58)",
+        "tonalRamp": ["#100d08", "#181410", "#201c14", "#2e2818", "#3a3422", "#4a432e", "#5e563e", "#746c52"]
+      },
+      "text": {
+        "role": "neutral",
+        "displayName": "Warm Ivory",
+        "canonical": "oklch(93% 0.014 60)",
+        "tonalRamp": ["#3a3028", "#524840", "#6e6258", "#8c8070", "#a89890", "#c4b8ac", "#dcd4c8", "#f0ece2"]
+      },
+      "text-secondary": {
+        "role": "neutral",
+        "displayName": "Warm Stone",
+        "canonical": "oklch(73% 0.018 58)",
+        "tonalRamp": ["#2a2420", "#3e3830", "#554e48", "#6e6860", "#887e76", "#a09890", "#b8af98", "#d0c8c0"]
+      },
+      "muted": {
+        "role": "neutral",
+        "displayName": "Warm Ash",
+        "canonical": "oklch(54% 0.016 56)",
+        "tonalRamp": ["#1e1c18", "#2a2820", "#38342c", "#484238", "#5c5448", "#6e665a", "#857a68", "#a09688"]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Hero name only. One per page. The single place the system goes loud."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Section h2 titles. One per section. Never used for card headings."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Card h3 headings. Component-level hierarchy within a section."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Flowing prose: bio paragraphs, card descriptions. Max 65-75ch line length."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Tech tags, skill tags, section labels (sparingly). Mono-only. Never for sentences."
+      }
+    },
+    "shadows": [
+      {
+        "name": "hover-lift",
+        "value": "0 16px 40px rgba(0, 0, 0, 0.35)",
+        "purpose": "Project and plan cards on hover. Appears alongside the Y-lift transform (-4px). Never at rest."
+      },
+      {
+        "name": "accent-glow",
+        "value": "0 8px 24px rgba(232, 100, 28, 0.18)",
+        "purpose": "Primary button hover. A faint orange bloom that disappears on mouse-out."
+      },
+      {
+        "name": "navbar-edge",
+        "value": "0 1px 0 #2e2818",
+        "purpose": "Navbar bottom separator on scroll. Structural separator, not a floating shadow."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease-standard",
+        "value": "200ms ease",
+        "purpose": "Default state transition for color, border-color, background. Maps to --transition."
+      },
+      {
+        "name": "ease-lift",
+        "value": "220ms ease",
+        "purpose": "Card and button hover lifts (transform + box-shadow together)."
+      },
+      {
+        "name": "ease-reveal",
+        "value": "600ms ease",
+        "purpose": "Section fade-in scroll reveals (opacity + translateY 24px). Reduce-motion: instant / no translate."
+      },
+      {
+        "name": "ease-nav",
+        "value": "280ms ease",
+        "purpose": "Mobile nav panel slide-in (transform + opacity)."
+      }
+    ],
+    "breakpoints": [
+      { "name": "mobile", "value": "640px", "purpose": "Navbar collapses to hamburger; logo name hidden." },
+      { "name": "tablet", "value": "720px", "purpose": "About section 2-col grid collapses to single column." }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Main CTA. Orange fill, warm ivory text. Used for primary page actions.",
+      "html": "<button class=\"ds-btn-primary\">View My Work</button>",
+      "css": ".ds-btn-primary { display: inline-flex; align-items: center; gap: 8px; padding: 11px 26px; border-radius: 8px; font-family: 'Inter', -apple-system, sans-serif; font-size: 0.925rem; font-weight: 600; color: #f0ece2; background: #e8641c; border: none; cursor: pointer; text-decoration: none; transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease; line-height: 1; } .ds-btn-primary:hover { background: #c24e0e; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(232, 100, 28, 0.18); } .ds-btn-primary:focus-visible { outline: 2px solid #e8641c; outline-offset: 3px; } @media (prefers-reduced-motion: reduce) { .ds-btn-primary { transition: background 0.2s ease; } .ds-btn-primary:hover { transform: none; box-shadow: none; } }"
+    },
+    {
+      "name": "Ghost Button",
+      "kind": "button",
+      "refersTo": "button-ghost",
+      "description": "Secondary CTA. Card background with warm divider border. Used alongside primary buttons.",
+      "html": "<button class=\"ds-btn-ghost\">GitHub ↗</button>",
+      "css": ".ds-btn-ghost { display: inline-flex; align-items: center; gap: 8px; padding: 11px 26px; border-radius: 8px; font-family: 'Inter', -apple-system, sans-serif; font-size: 0.925rem; font-weight: 600; color: #f0ece2; background: #201c12; border: 1px solid #2e2818; cursor: pointer; text-decoration: none; transition: border-color 0.2s ease, color 0.2s ease, transform 0.2s ease; line-height: 1; } .ds-btn-ghost:hover { border-color: #e8641c; color: #f0a06a; transform: translateY(-2px); } .ds-btn-ghost:focus-visible { outline: 2px solid #e8641c; outline-offset: 3px; } @media (prefers-reduced-motion: reduce) { .ds-btn-ghost:hover { transform: none; } }"
+    },
+    {
+      "name": "Skill Tag",
+      "kind": "chip",
+      "refersTo": "skill-tag",
+      "description": "Interactive capability chip in the About section. Faded amber text on card bg; accent border on hover.",
+      "html": "<ul class=\"ds-skill-list\"><li class=\"ds-skill-tag\">React</li><li class=\"ds-skill-tag\">Python</li><li class=\"ds-skill-tag\">Node.js</li></ul>",
+      "css": ".ds-skill-list { display: flex; flex-wrap: wrap; gap: 8px; list-style: none; padding: 0; margin: 0; } .ds-skill-tag { font-family: 'JetBrains Mono', 'Fira Code', monospace; font-size: 0.8rem; color: #f0a06a; background: #201c12; border: 1px solid #2e2818; padding: 5px 14px; border-radius: 6px; transition: border-color 0.2s ease, color 0.2s ease; cursor: default; list-style: none; } .ds-skill-tag:hover { border-color: #e8641c; color: #f0ece2; }"
+    },
+    {
+      "name": "Tech Tag",
+      "kind": "chip",
+      "refersTo": "skill-tag",
+      "description": "Read-only technology indicator on project cards. Orange-tinted tint, no hover state.",
+      "html": "<ul class=\"ds-tech-list\"><li class=\"ds-tech-tag\">Python</li><li class=\"ds-tech-tag\">Sci-Kit Learn</li></ul>",
+      "css": ".ds-tech-list { display: flex; flex-wrap: wrap; gap: 6px; list-style: none; padding: 0; margin: 0; } .ds-tech-tag { font-family: 'JetBrains Mono', 'Fira Code', monospace; font-size: 0.72rem; color: #f0a06a; background: rgba(232, 100, 28, 0.12); border: 1px solid rgba(232, 100, 28, 0.25); padding: 3px 10px; border-radius: 4px; list-style: none; }"
+    },
+    {
+      "name": "Project Card",
+      "kind": "card",
+      "refersTo": "project-card",
+      "description": "Core portfolio card: title, description, tech tags, GitHub link. Flat at rest; accent border + lift on hover.",
+      "html": "<article class=\"ds-project-card\"><div class=\"ds-project-card__header\"><h3 class=\"ds-project-card__title\">Breast Cancer Prediction Model</h3><a href=\"#\" class=\"ds-project-card__link\" aria-label=\"View on GitHub\"><svg width=\"17\" height=\"17\" viewBox=\"0 0 24 24\" fill=\"currentColor\"><path d=\"M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844a9.59 9.59 0 0 1 2.504.337c1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0 0 22 12.017C22 6.484 17.522 2 12 2z\"/></svg></a></div><p class=\"ds-project-card__desc\">Predicts tumor malignancy with 96% accuracy using a machine learning diagnostic pipeline.</p><ul class=\"ds-project-card__tags\"><li class=\"ds-project-tag\">Python</li><li class=\"ds-project-tag\">Sci-Kit Learn</li><li class=\"ds-project-tag\">Pandas</li></ul></article>",
+      "css": ".ds-project-card { background: #201c12; border: 1px solid #2e2818; border-radius: 12px; padding: 28px; display: flex; flex-direction: column; gap: 14px; transition: border-color 0.2s ease, transform 0.22s ease, box-shadow 0.22s ease; max-width: 360px; } .ds-project-card:hover { border-color: #e8641c; transform: translateY(-4px); box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35); } .ds-project-card__header { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; } .ds-project-card__title { font-family: 'Inter', -apple-system, sans-serif; font-size: 1.1rem; font-weight: 700; color: #f0ece2; letter-spacing: -0.01em; line-height: 1.3; } .ds-project-card__link { color: #857a68; display: flex; align-items: center; transition: color 0.2s ease; text-decoration: none; flex-shrink: 0; } .ds-project-card__link:hover { color: #f0a06a; } .ds-project-card__desc { font-family: 'Inter', -apple-system, sans-serif; font-size: 0.9rem; color: #b8af98; line-height: 1.75; flex: 1; } .ds-project-card__tags { display: flex; flex-wrap: wrap; gap: 6px; list-style: none; padding: 0; margin-top: 4px; } .ds-project-tag { font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; color: #f0a06a; background: rgba(232, 100, 28, 0.12); border: 1px solid rgba(232, 100, 28, 0.25); padding: 3px 10px; border-radius: 4px; list-style: none; } @media (prefers-reduced-motion: reduce) { .ds-project-card { transition: border-color 0.2s ease; } .ds-project-card:hover { transform: none; box-shadow: none; } }"
+    },
+    {
+      "name": "Navigation",
+      "kind": "nav",
+      "refersTo": "button-primary",
+      "description": "Fixed top navbar in its scrolled (frosted) state. Orange badge logo, warm ash links, Faded Amber CTA.",
+      "html": "<nav class=\"ds-navbar\"><div class=\"ds-navbar__inner\"><a href=\"#\" class=\"ds-navbar__logo\"><span class=\"ds-navbar__badge\">BH</span><span class=\"ds-navbar__name\">Brandon Hernandez</span></a><ul class=\"ds-navbar__links\"><li><a href=\"#about\" class=\"ds-navbar__link\">About</a></li><li><a href=\"#projects\" class=\"ds-navbar__link\">Projects</a></li><li><a href=\"mailto:bthernandez0915@gmail.com\" class=\"ds-navbar__link ds-navbar__cta\">Contact</a></li></ul></div></nav>",
+      "css": ".ds-navbar { background: rgba(16, 14, 9, 0.88); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); box-shadow: 0 1px 0 #2e2818; padding: 14px 24px; } .ds-navbar__inner { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; } .ds-navbar__logo { display: flex; align-items: center; gap: 10px; text-decoration: none; color: #f0ece2; } .ds-navbar__badge { width: 34px; height: 34px; background: #e8641c; color: #f0ece2; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-family: 'Inter', -apple-system, sans-serif; font-weight: 700; font-size: 0.8rem; letter-spacing: 0.04em; flex-shrink: 0; } .ds-navbar__name { font-family: 'Inter', -apple-system, sans-serif; font-weight: 600; font-size: 0.95rem; letter-spacing: -0.01em; } .ds-navbar__links { display: flex; align-items: center; gap: 4px; list-style: none; padding: 0; } .ds-navbar__link { color: #857a68; text-decoration: none; font-family: 'Inter', -apple-system, sans-serif; font-size: 0.875rem; font-weight: 500; padding: 6px 12px; border-radius: 6px; transition: color 0.2s ease, background 0.2s ease; } .ds-navbar__link:hover { color: #f0ece2; background: #201c12; } .ds-navbar__cta { color: #f0a06a; border: 1px solid #2e2818; margin-left: 8px; } .ds-navbar__cta:hover { color: #f0ece2; background: #e8641c; border-color: #e8641c; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Engineer's Bench",
+    "overview": "A space clearly in use. Everything at hand has earned its place: the tools are organized not for display but for reach, the surfaces are dark because focus is the point, and the one bright color marks exactly what matters. Nothing decorative. Nothing there to prove the bench exists — only evidence that work happens here.\n\nThe visual system holds a single committed accent (named Marty Supreme Orange by the brand, a vivid burnt orange in practice) against a warm near-black field built from three tiers of tonal depth. Mono type earns its presence by labeling data, not by costuming as 'technical.' Interactions are confirmations, not celebrations: borders sharpen, elements lift slightly, and then settle.\n\nThis system explicitly rejects the generic dark SaaS developer aesthetic: uniform card grids, purple-on-charcoal scroll reveals, floating particle effects, and identical uppercase eyebrow labels scaffolding every section. It also rejects corporate light grays, the editorial-magazine lane, and brutalist experimentation.",
+    "keyCharacteristics": [
+      "Three-tier warm dark stack (Night Field → Raised Surface → Elevated Card) creates depth without shadows at rest",
+      "One committed accent color used exclusively as a signal: CTAs, hover borders, active labels",
+      "JetBrains Mono used only for metadata and code — never body copy, never display",
+      "Hover pattern: accent border + slight Y lift. No celebration, just confirmation",
+      "Backdrop-blur navbar is the only surface with blur; glassmorphism is otherwise prohibited"
+    ],
+    "rules": [
+      { "name": "The Signal Rule", "body": "Marty Supreme Orange appears on ≤15% of any given screen. Its rarity is the signal. If the accent is everywhere, nothing is signaled.", "section": "colors" },
+      { "name": "The Tonal Stack Rule", "body": "Depth is expressed through the three-tier warm neutral ramp (Night Field → Raised Surface → Elevated Card). Do not add new warm-dark tones to the stack.", "section": "colors" },
+      { "name": "The Mono-as-Metadata Rule", "body": "JetBrains Mono labels one thing: this is technical data, not prose. Use it for skill chips, tech tags, section labels, the email address, and inline code. Never for body paragraphs, headings, or any text longer than a short phrase.", "section": "typography" },
+      { "name": "The Flat-at-Rest Rule", "body": "No surface casts a shadow in its default state. Depth is tonal. Shadows appear only as state response: hover lifts a card, focus rings a button, scroll reveals the navbar edge.", "section": "elevation" },
+      { "name": "The One Blur Rule", "body": "Backdrop-filter blur is used exclusively on the scrolled navbar. Any additional blur panels are glassmorphism by default and are prohibited.", "section": "elevation" }
+    ],
+    "dos": [
+      "Use the three-tier tonal stack (Night Field → Raised Surface → Elevated Card) when a new surface needs to feel distinct",
+      "Reserve Marty Supreme Orange for interactive signals: primary buttons, hover borders, active-state labels",
+      "Use JetBrains Mono exclusively for metadata: tech tags, skill tags, code snippets, the email address",
+      "Apply the hover pattern consistently: accent border transition + Y lift (-2px small, -4px cards)",
+      "Add @media (prefers-reduced-motion: reduce) alternatives for all animations",
+      "Use Warm Stone (#b8af98) for body-sized secondary text — approximately 9:1 contrast, WCAG AAA"
+    ],
+    "donts": [
+      "Don't use gradient text (background-clip: text). Previously violated on hero name and avatar initials — both now fixed",
+      "Don't use the generic dark SaaS developer aesthetic: identical card grids, floating particles, eyebrow labels on every heading",
+      "Don't put uppercase tracked mono labels above every section heading — AI-scaffold grammar, not brand voice",
+      "Don't use the editorial-magazine aesthetic: italic display serifs, ruled separators, broadsheet columns",
+      "Don't use Warm Ash (#857a68) for body paragraph copy — use Warm Stone (#b8af98) for comfort margin",
+      "Don't add decorative gradient stripes on cards (previously present on plan cards, now removed)",
+      "Don't add backdrop blur to any surface other than the scrolled navbar",
+      "Don't nest cards inside cards — there is no fourth tier in the tonal stack"
+    ]
+  }
+}

@@ -2,31 +2,21 @@ import { futurePlans } from '../data'
 import { useInView } from '../hooks/useInView'
 import './FuturePlans.css'
 
-const categoryColor = {
-  Learning: '#a78bfa',
-  Projects: '#34d399',
-  Career: '#f472b6',
-  Community: '#fb923c',
-}
-
-function PlanCard({ plan, index }) {
+function PlanItem({ plan, num, index }) {
   const [ref, visible] = useInView()
-
   return (
-    <div
+    <li
       ref={ref}
-      className={`plan-card fade-in${visible ? ' visible' : ''}`}
+      className={`plan-item fade-in${visible ? ' visible' : ''}`}
       style={{ transitionDelay: `${index * 80}ms` }}
     >
-      <span
-        className="plan-card__category"
-        style={{ color: categoryColor[plan.category] ?? 'var(--accent-light)' }}
-      >
-        {plan.category}
-      </span>
-      <h3 className="plan-card__title">{plan.title}</h3>
-      <p className="plan-card__desc">{plan.description}</p>
-    </div>
+      <span className="plan-item__num">{num}</span>
+      <div className="plan-item__body">
+        <span className="plan-item__cat">{plan.category}</span>
+        <h3 className="plan-item__title">{plan.title}</h3>
+        <p className="plan-item__desc">{plan.description}</p>
+      </div>
+    </li>
   )
 }
 
@@ -34,13 +24,20 @@ export default function FuturePlans() {
   return (
     <section id="plans" className="plans">
       <div className="container">
-        <span className="section-label">Where I'm Headed</span>
-        <h2 className="section-title">Future Plans</h2>
-        <div className="plans__grid">
+        <header className="section-head">
+          <h2 className="section-head__title">What's Next</h2>
+          <div className="section-head__rule" aria-hidden="true" />
+        </header>
+        <ol className="plans__list">
           {futurePlans.map((plan, i) => (
-            <PlanCard key={plan.id} plan={plan} index={i} />
+            <PlanItem
+              key={plan.id}
+              plan={plan}
+              num={`0${i + 1}`}
+              index={i}
+            />
           ))}
-        </div>
+        </ol>
       </div>
     </section>
   )

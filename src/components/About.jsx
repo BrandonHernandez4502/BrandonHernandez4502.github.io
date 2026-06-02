@@ -8,40 +8,32 @@ export default function About() {
   return (
     <section id="about" className="about">
       <div className="container">
-        <span className="section-label">Who I Am</span>
-        <h2 className="section-title">About Me</h2>
+        <header className="section-head">
+          <h2 className="section-head__title">About</h2>
+          <div className="section-head__rule" aria-hidden="true" />
+        </header>
 
-        <div ref={ref} className={`about__grid fade-in${visible ? ' visible' : ''}`}>
-          <div className="about__avatar-wrap">
-            <div className="about__avatar">
-              <span>
-                {personal.name
-                  .split(' ')
-                  .map((n) => n[0])
-                  .join('')}
-              </span>
-            </div>
-            <div className="about__avatar-ring" aria-hidden="true" />
+        <div ref={ref} className={`about__layout fade-in${visible ? ' visible' : ''}`}>
+          <div className="about__text">
+            {personal.bio.map((p, i) => (
+              <p key={i} className="about__bio">{p}</p>
+            ))}
           </div>
 
-          <div className="about__content">
-            {personal.bio.map((paragraph, i) => (
-              <p key={i} className="about__bio">
-                {paragraph}
-              </p>
-            ))}
-
-            <div className="about__skills">
-              <h3 className="about__skills-heading">Technologies I work with</h3>
-              <ul className="about__skills-list">
-                {personal.skills.map((skill) => (
-                  <li key={skill} className="about__skill-tag">
-                    {skill}
-                  </li>
+          <aside className="about__sidebar">
+            <div className="about__block">
+              <span className="about__label">Location</span>
+              <span className="about__val">{personal.location}</span>
+            </div>
+            <div className="about__block">
+              <span className="about__label">Stack</span>
+              <ul className="about__skills">
+                {personal.skills.map((s) => (
+                  <li key={s} className="about__skill">{s}</li>
                 ))}
               </ul>
             </div>
-          </div>
+          </aside>
         </div>
       </div>
     </section>

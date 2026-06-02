@@ -1,61 +1,73 @@
-.plans__grid {
+.plans {
+  background: var(--surface);
+  padding: 96px 24px;
+}
+
+.plans__list {
+  list-style: none;
+}
+
+.plan-item {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-  gap: 20px;
+  grid-template-columns: 72px 1fr;
+  gap: 40px;
+  padding: 40px 0;
+  border-bottom: 1px solid var(--border);
+  align-items: start;
 }
 
-.plan-card {
-  background: var(--card);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 28px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  transition: border-color var(--transition), transform 0.22s ease;
-  position: relative;
-  overflow: hidden;
+.plan-item:first-child {
+  border-top: 1px solid var(--border);
 }
 
-.plan-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 2px;
-  background: linear-gradient(90deg, var(--accent), transparent);
-  opacity: 0;
-  transition: opacity var(--transition);
-}
-
-.plan-card:hover {
-  border-color: var(--accent);
-  transform: translateY(-3px);
-}
-
-.plan-card:hover::before {
-  opacity: 1;
-}
-
-.plan-card__category {
+.plan-item__num {
   font-family: var(--mono);
-  font-size: 0.72rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  font-weight: 500;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--border);
+  line-height: 1;
+  padding-top: 4px;
+  transition: color var(--transition);
 }
 
-.plan-card__title {
-  font-size: 1rem;
+.plan-item:hover .plan-item__num {
+  color: var(--accent);
+}
+
+.plan-item__cat {
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.plan-item__title {
+  font-size: 1.2rem;
   font-weight: 700;
   color: var(--text);
   letter-spacing: -0.01em;
-  line-height: 1.35;
+  margin-bottom: 10px;
+  text-wrap: balance;
 }
 
-.plan-card__desc {
-  font-size: 0.875rem;
+.plan-item__desc {
+  font-size: 0.95rem;
   color: var(--text-secondary);
   line-height: 1.75;
+  max-width: 58ch;
+}
+
+@media (max-width: 640px) {
+  .plan-item {
+    grid-template-columns: 48px 1fr;
+    gap: 20px;
+    padding: 28px 0;
+  }
+
+  .plan-item__num {
+    font-size: 1.3rem;
+  }
 }

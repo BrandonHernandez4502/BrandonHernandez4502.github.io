@@ -18,7 +18,7 @@ export const projects = [
     id: 1,
     title: 'Breast Cancer Prediction Model',
     description:
-      'This project predicts whether or not a tumor is bengin or malignant with 96% accuracy. This project was particularly important to familarize my self with data analysis and machine learning pipelines.',
+      'This project predicts whether a tumor is benign or malignant with 96% accuracy. It was my first real exposure to data analysis and machine learning pipelines.',
     tech: ['Python', 'Sci-Kit Learn', 'Pandas'],
     github: 'https://github.com/BrandonHernandez4502/BreastCancerDiagnostic',
     live: null,
@@ -36,7 +36,7 @@ export const projects = [
     id: 3,
     title: 'HolyCross Robotics Club',
     description:
-      'The robotics club is one of my proudest accomplishments. A friend and I founded the first robotics club at our small liberal arts college. I led a small team of develeopers to create an autonmous robotic arm.',
+      'The robotics club is one of my proudest accomplishments. A friend and I founded the first robotics club at our small liberal arts college. I led a small team of developers to build an autonomous robotic arm.',
     tech: ['Python', 'ROS 2'],
     github: 'https://github.com/Holy-Cross-Robotics-Club/robotic-arm-patrick',
     live: null,
